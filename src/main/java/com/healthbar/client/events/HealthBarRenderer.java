@@ -26,7 +26,6 @@ public class HealthBarRenderer {
 		float healthProcent = e.entity.getHealth() / e.entity.getMaxHealth();
         GlStateManager.pushMatrix();
         GL11.glDisable(GL11.GL_LIGHTING);
-        GL11.glEnable(GL11.GL_BLEND);
         GlStateManager.translate((float)e.x, (float)e.y + e.entity.height + 0.28F, (float)e.z);
         GL11.glNormal3f(0.0F, 1.0F, 0.0F);
         GlStateManager.rotate(-Minecraft.getMinecraft().getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
@@ -39,7 +38,6 @@ public class HealthBarRenderer {
         GlStateManager.translate(0, -1, -0.001);
         drawScaledCustomSizeModalRect(0, 0, 0, 0, 11, (int) (128 * healthProcent), 21, 128, 32);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        GL11.glDisable(GL11.GL_BLEND);
         GL11.glEnable(GL11.GL_LIGHTING);
         GlStateManager.popMatrix();	
 	}
